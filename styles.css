@@ -40,7 +40,7 @@ body {
 }
 
 .logo {
-    width: 100px;
+    width: 250px;
     margin-bottom: 20px;
 }
 
@@ -117,18 +117,18 @@ button:hover {
     border-radius: 10px;
     background: #f9f9f9;
     margin: 10px 0;
-    width: 80%;
+    width: 100%;
 }
 
 .mood-options img {
     width: 50px;
-    margin: 5px;
+    margin: 2px;
     cursor: pointer;
     transition: border 0.3s ease;
 }
 
 .mood-options img:hover {
-    border: 2px solid orange;
+    border: 3px solid orange;
 }
 
 video {

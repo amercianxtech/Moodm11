@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Mantra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Back Button (hyperlink on the background gradient) -->
+    <a href="#" class="back-link" onclick="goBack()">Back</a>
+
+    <!-- Login Screen -->
+    <div class="screen" id="login-screen">
+        <img src="logo.png" alt="Mood Mantra Logo" class="logo">
+        <h1>Mood Mantra</h1>
+        <input type="email" placeholder="Email" id="login-email">
+        <input type="password" placeholder="Password" id="login-password">
+        <button onclick="showScreen('home-screen')">Login</button>
+        <button onclick="showScreen('signup-screen')">Sign Up</button>
+        <button class="social-login">
+            <img src="google-logo.png" alt="Google Logo"> Login with Google
+        </button>
+        <button class="social-login">
+            <img src="fb-logo.png" alt="Facebook Logo"> Login with Facebook
+        </button>
+    </div>
+
+    <!-- Sign Up Screen -->
+    <div class="screen" id="signup-screen">
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Name" id="signup-name">
+        <input type="email" placeholder="Email" id="signup-email">
+        <input type="password" placeholder="Password" id="signup-password">
+        <button onclick="showScreen('home-screen')">Sign Up</button>
+    </div>
+
+    <!-- Home Screen -->
+    <div class="screen" id="home-screen">
+        <header>
+            <h2>Hello, Jennifer</h2>
+        </header>
+        <div class="content">
+            <h3>How are you feeling today?</h3>
+            <button class="map-mood-button" onclick="showScreen('get-mood-screen')">Map My Mood</button>
+        </div>
+    </div>
+
+    <!-- Get Mood Screen -->
+    <div class="screen" id="get-mood-screen">
+        <h3>Map My Mood</h3>
+        <div class="card" id="emotional-state-card">
+            <label>Emotional State:</label>
+            <div class="mood-options" id="emotional-state">
+                <img src="heart1.png" onclick="selectMood('emotionalState', 'Very Sad')">
+                <img src="heart2.png" onclick="selectMood('emotionalState', 'Sad')">
+                <img src="heart3.png" onclick="selectMood('emotionalState', 'Neutral')">
+                <img src="heart4.png" onclick="selectMood('emotionalState', 'Happy')">
+                <img src="heart5.png" onclick="selectMood('emotionalState', 'Very Happy')">
+            </div>
+        </div>
+        <div class="card" id="contentment-card" style="display: none;">
+            <label>Contentment:</label>
+            <div class="mood-options" id="contentment">
+                <img src="smiley1.png" onclick="selectMood('contentment', 'Very Wanting')">
+                <img src="smiley2.png" onclick="selectMood('contentment', 'Wanting')">
+                <img src="smiley3.png" onclick="selectMood('contentment', 'Neutral')">
+                <img src="smiley4.png" onclick="selectMood('contentment', 'Content')">
+                <img src="smiley5.png" onclick="selectMood('contentment', 'Very Content')">
+            </div>
+        </div>
+        <div class="card" id="calmness-card" style="display: none;">
+            <label>Calmness:</label>
+            <div class="mood-options" id="calmness">
+                <img src="brain1.png" onclick="selectMood('calmness', 'Very Chaotic')">
+                <img src="brain2.png" onclick="selectMood('calmness', 'Chaotic')">
+                <img src="brain3.png" onclick="selectMood('calmness', 'Neutral')">
+                <img src="brain4.png" onclick="selectMood('calmness', 'Calm')">
+                <img src="brain5.png" onclick="selectMood('calmness', 'Very Calm')">
+            </div>
+        </div>
+        <button id="get-mantra-button" style="display: none;" onclick="showScreen('get-mantra-screen')">Get Your Mood</button>
+    </div>
+
+    <!-- Get Mantra Screen -->
+    <div class="screen" id="get-mantra-screen">
+    <h2>Your mood now is-</h2> <br>
+        <h3>Reflective Euphoria</h3>
+        <p>Joy and contentment, mixed with chaotic feelings of reflective euphoria.</p>
+
+        <button onclick="showScreen('completion-screen')">Generate your video mantra</button>
+    </div>
+
+    <!-- Completion Screen -->
+    <div class="screen" id="completion-screen">
+        <h3>How good was today’s Mood Mantra?</h3>
+        <video controls>
+		    <source src="your-video.mp4" type="video/mp4">
+		    Your browser does not support the video tag.
+</video>
+        <button onclick="showScreen('history-screen')">Download Mood Mantra</button>
+        <button>Share with Friends</button>
+    </div>
+
+    <!-- History Screen -->
+    <div class="screen" id="history-screen">
+        <h3>My Mood Journal</h3>
+        <p>Jul 14, 2024 - Reflective Euphoria</p>
+        <p>Jul 08, 2024 - Somber Confusion</p>
+        <p>Jun 30, 2024 - Subtle Sorrow</p>
+        <p>Jun 05, 2024 - Calm Elation</p>
+    </div>
+
+    <!-- Downloads Screen -->
+    <div class="screen" id="downloads-screen">
+        <h3>My Downloads</h3>
+        <p>Reflective Euphoria - Jul 14, 2024</p>
+        <p>Somber Confusion - Jul 08, 2024</p>
+        <p>Subtle Sorrow - Jun 10, 2024</p>
+        <p>Calm Elation - Jun 05, 2024</p>
+    </div>
+
+    <!-- Profile Screen -->
+    <div class="screen" id="profile-screen">
+        <h3>My Profile</h3>
+        <p>Jennifer Aniston</p>
+        <p>Jenny.a@gmail.com</p>
+        <p>Subscription: Free Plan</p>
+        <button>Upgrade</button>
+        <button>Privacy</button>
+        <button>Contact</button>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button onclick="showScreen('history-screen')">
+            <img src="history-icon.png" alt="History Icon"> <b><font color="#101010">History</font></b>
+        </button>
+        <button onclick="showScreen('downloads-screen')">
+            <img src="downloads-icon.png" alt="Downloads Icon"> <b><font color="#101010">Downloads</font></b>
+        </button>
+        <button onclick="showScreen('profile-screen')">
+            <img src="profile-icon.png" alt="Profile Icon"> <b><font color="#101010">Profile</font></b>
+        </button>
+    </nav>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

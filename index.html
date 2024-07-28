@@ -17,7 +17,9 @@
         <input type="email" placeholder="Email" id="login-email">
         <input type="password" placeholder="Password" id="login-password">
         <button onclick="showScreen('home-screen')">Login</button>
-        <button onclick="showScreen('signup-screen')">Sign Up</button>
+<h5>Dont have an account?</h5>
+
+        <button onclick="showScreen('signup-screen')">Sign Up with email</button>
         <button class="social-login">
             <img src="google-logo.png" alt="Google Logo"> Login with Google
         </button>
@@ -39,16 +41,18 @@
     <div class="screen" id="home-screen">
         <header>
             <h2>Hello, Jennifer</h2>
+            <img src="jennifer-photo.png" alt="Jennifer's Photo" id="jennifer-photo" style="width: 100px; height: 100px; border-radius: 50%; margin-top: 10px;">
         </header>
         <div class="content">
-            <h3>How are you feeling today?</h3>
-            <button class="map-mood-button" onclick="showScreen('get-mood-screen')">Map My Mood</button>
+         <h3><font color="#8B008B">It's a new day full of possibilities. Embrace every moment, take on new challenges, and make today amazing!</font></h3>
+
+            <button class="map-mood-button" onclick="showScreen('get-mood-screen')">How are you feeling today?</button>
         </div>
     </div>
 
     <!-- Get Mood Screen -->
     <div class="screen" id="get-mood-screen">
-        <h3>Map My Mood</h3>
+        <h3>Select your Mood</h3>
         <div class="card" id="emotional-state-card">
             <label>Emotional State:</label>
             <div class="mood-options" id="emotional-state">

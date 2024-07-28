@@ -40,7 +40,7 @@ body {
 }
 
 .logo {
-    width: 250px;
+    width: 300px;
     margin-bottom: 20px;
 }
 
@@ -138,3 +138,8 @@ video {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+.cursive-text {
+            font-family: 'Pacifico', 'Pacifico', 'cursive';
+        }
